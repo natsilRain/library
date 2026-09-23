@@ -29,34 +29,57 @@ function removeAllChildNodes(parent) {
 }
 
 function displayBooks() {
-    myLibrary.forEach((book) => {
+    if (myLibrary.length === 0) {
+        const library = document.querySelector(".libraryDisplay");
+        library.remove();
+    } else {
+        myLibrary.forEach((book) => {
         const bookItem = document.createElement("div");
 
         const bookTitle = document.createElement("h2");
         const bookAuthor = document.createElement("p");
         const bookPages = document.createElement("p");
         const bookRead = document.createElement("p");
+        const removeBook = document.createElement("button");
 
         bookTitle.textContent = `${book.title}`;
         bookAuthor.textContent = `by ${book.author}`;
         bookPages.textContent = `page count: ${book.pages}`;
         bookRead.textContent = `${book.read}`;
+        removeBook.textContent = "-";
 
         bookTitle.classList.add("title");
         bookAuthor.classList.add("author");
         bookPages.classList.add("pages");
         bookRead.classList.add("status");
+        removeBook.classList.add("removeBookBtn");
+
+        removeBook.dataset.btnBookId = book.id;
+        removeBook.addEventListener("click", (e) => {
+            const button = e.target;
+            const bookId = button.dataset.btnBookId;
+            const index = myLibrary.findIndex(obj => obj.id === bookId);
+
+            myLibrary.splice(index, 1);
+            myLibrary.forEach((book) => {
+                const currentDiv = document.querySelector(".libraryDisplay");
+                removeAllChildNodes(currentDiv);
+            });
+            displayBooks();
+        });
 
         bookItem.appendChild(bookTitle);
         bookItem.appendChild(bookAuthor);
         bookItem.appendChild(bookPages);
         bookItem.appendChild(bookRead);
+        bookItem.appendChild(removeBook);
 
         bookItem.classList.add("card")
 
         const currentDiv = document.querySelector(".libraryDisplay");
         currentDiv.appendChild(bookItem);
-    });
+        });
+    }
 }
 
 addBookToLibrary("The Great Gatsby", "E. Scott. Fitzgerald", 140, "reading");

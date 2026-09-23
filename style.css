@@ -90,6 +90,8 @@ body {
 }
 
 .card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,6 +127,24 @@ body {
     padding: 5px 10px;
 
     border-radius: 8px;
+}
+
+.removeBookBtn {
+    position: absolute;
+    top: 112px;
+    left: 250px;
+
+    cursor: pointer;
+
+    background-color: #eebbc3;
+    border: none;
+    border-radius: 8px;
+
+    color: #232946;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    padding: 3px 14px;
 }
 
 .new-book-dialog {
