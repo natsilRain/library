@@ -140,7 +140,7 @@ body {
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .new-book-header button {
@@ -148,17 +148,22 @@ body {
 
     background-color: #eebbc3;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
 
     color: #232946;
     font-size: 0.9rem;
     font-weight: bold;
 
-    padding: 0 15px;
+    padding: 8px 15px;
+    margin-left: 10px;
 }
 
 .new-book-dialog h2 {
     color: #fffffe;
+    border-left: 5px solid #eebbc3;
+    /* border-right: 5px solid #eebbc3; */
+    border-radius: 8px;
+    padding: 0 10px;
 }
 
 .new-book-dialog label {
@@ -173,6 +178,11 @@ body {
 
     padding: 3px 10px;
     margin-left: 5px;
+}
+
+.new-book-dialog input:focus {
+    outline: none;
+    outline: 2px solid #eebbc3;
 }
 
 .new-book-dialog #pages {
