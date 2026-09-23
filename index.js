@@ -16,6 +16,16 @@ Book.prototype.info = function() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 }
 
+Book.prototype.toggleStatus = function() {
+    if(this.read === "read") {
+        this.read = "unread";
+    } else if (this.read === "unread") {
+        this.read = "reading";
+    } else {
+        this.read = "read";
+    }
+}
+
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
 
@@ -53,6 +63,20 @@ function displayBooks() {
         bookPages.classList.add("pages");
         bookRead.classList.add("status");
         removeBook.classList.add("removeBookBtn");
+
+        bookRead.dataset.btnBookId = book.id;
+        bookRead.addEventListener("click", (e) => {
+            const toggle = e.target;
+            const bookId = toggle.dataset.btnBookId;
+            const index = myLibrary.findIndex(obj => obj.id === bookId);
+            
+            myLibrary[index].toggleStatus();
+            myLibrary.forEach((book) => {
+                const currentDiv = document.querySelector(".libraryDisplay");
+                removeAllChildNodes(currentDiv);
+            });
+            displayBooks();
+        })
 
         removeBook.dataset.btnBookId = book.id;
         removeBook.addEventListener("click", (e) => {

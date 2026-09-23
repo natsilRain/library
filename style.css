@@ -116,6 +116,8 @@ body {
 }
 
 .status {
+    cursor: pointer;
+
     background-color: #232946;
     color: #b8c1ec;
 
