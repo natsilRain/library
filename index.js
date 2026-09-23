@@ -88,8 +88,8 @@ newBookBtn.addEventListener("click", (e) => {
         removeAllChildNodes(currentDiv);
     });
     displayBooks();
-
     newBookDialog.close();
+    document.querySelector(".new-book-form").reset();
 });
 
 displayBooks();
