@@ -32,14 +32,21 @@ function displayBooks() {
         const read = document.createElement("p");
 
         title.textContent = `${book.title}`;
-        author.textContent = `${book.author}`;
-        pages.textContent = `${book.pages}`;
+        author.textContent = `by ${book.author}`;
+        pages.textContent = `page count: ${book.pages}`;
         read.textContent = `${book.read}`;
+
+        title.classList.add("title");
+        author.classList.add("author");
+        pages.classList.add("pages");
+        read.classList.add("status");
 
         bookItem.appendChild(title);
         bookItem.appendChild(author);
         bookItem.appendChild(pages);
         bookItem.appendChild(read);
+
+        bookItem.classList.add("card")
 
         const currentDiv = document.querySelector(".libraryDisplay");
         currentDiv.appendChild(bookItem);
@@ -47,8 +54,8 @@ function displayBooks() {
 }
 
 addBookToLibrary("The Great Gatsby", "E. Scott. Fitzgerald", 140, "reading");
-addBookToLibrary("Heart of Darkness", "Joseph Conrad", 101, "not read yet");
-addBookToLibrary("Treasure Island", "Robert Louis Stevenson", 225, "not read yet");
-addBookToLibrary("The Aeneid", "Virgil", 422, "not read yet");
+addBookToLibrary("Heart of Darkness", "Joseph Conrad", 101, "unread");
+addBookToLibrary("Treasure Island", "Robert Louis Stevenson", 225, "unread");
+addBookToLibrary("The Aeneid", "Virgil", 422, "unread");
 
 displayBooks();

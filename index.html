@@ -7,10 +7,49 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Rain's Library</h1>
-    <div class="libraryDisplay">
+    <div class="content">
+        <div class="header">
+            <h1>Rain's Library</h1>
+            <button type="button" command="show-modal" commandfor="new-book">+</button>
+        </div>
+        <div class="libraryDisplay">
 
+        </div>
     </div>
+    <dialog id="new-book" class="new-book-dialog">
+        <form action="" method="">
+            <div class="new-book-header">
+                <h2>New Book</h2>
+                <button type="submit">Ok</button>
+            </div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="bookTitle" />
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="bookAuthor" />
+
+            <label for="pages">Page Count:</label>
+            <input type="number" id="pages" name="bookPages" />
+
+            <fieldset>
+                <legend>Book Status</legend>
+                <div>
+                    <input type="radio" id="read" name="status" />
+                    <label for="read">Read</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="unread" name="status" />
+                    <label for="unread">Unread</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="reading" name="status" />
+                    <label for="reading">Reading</label>
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
     <script src="index.js"></script>
 </body>
 </html>

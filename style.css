@@ -38,3 +38,158 @@ ol, ul {
     list-style: none;
     padding-inline: 0;
 }
+
+/* CSS Styling */
+
+body {
+    background-color: #d4d8f0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 25px 30px;
+
+    border-bottom: 2px solid #eebbc3;
+}
+
+.header h1 {
+    color: #fffffe;
+}
+
+.header button {
+    cursor: pointer;
+
+    background-color: #eebbc3;
+    border: none;
+    border-radius: 8px;
+
+    color: #232946;
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    padding: 0 15px;
+}
+
+.content {
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    text-align: center;
+    background-color: #232946;
+}
+
+.libraryDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    padding: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #232946;
+
+    background-color: #fffffe;
+    border-radius: 12px;
+
+    margin: 10px;
+    padding: 20px;
+
+    min-width: 300px;
+}
+
+.card h2 {
+    color: #232946;
+}
+
+.pages {
+    font-size: 0.8rem;
+}
+
+.status {
+    background-color: #232946;
+    color: #b8c1ec;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    max-width: fit-content;
+    margin-top: 15px;
+    padding: 5px 10px;
+
+    border-radius: 8px;
+}
+
+.new-book-dialog {
+    background-color: #232946;
+    color: #b8c1ec;
+
+    border-radius: 12px;
+
+    padding: 20px 30px;
+}
+
+.new-book-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.new-book-header button {
+    cursor: pointer;
+
+    background-color: #eebbc3;
+    border: none;
+    border-radius: 8px;
+
+    color: #232946;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    padding: 0 15px;
+}
+
+.new-book-dialog h2 {
+    color: #fffffe;
+}
+
+.new-book-dialog label {
+    margin-left: 5px;
+}
+
+.new-book-dialog input {
+    border: none;
+    border-radius: 12px;
+
+    background-color: #fffffe;
+
+    padding: 3px 10px;
+    margin-left: 5px;
+}
+
+.new-book-dialog #pages {
+    max-width: 10ch;
+}
+
+.new-book-dialog fieldset {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    border: 2px solid #b8c1ec;
+    border-radius: 12px;
+}
+
+.new-book-dialog fieldset legend {
+    color: #fffffe;
+    font-weight: bold;
+}
